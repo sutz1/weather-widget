@@ -23,10 +23,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Git
+        run: |
+          git config --global user.name "sutz1"
+          git config --global user.email "sutz1@users.noreply.github.com"
+
       - name: Deploy to GitHub Pages
         run: |
-          git config --global user.name "${{ github.actor }}"
-          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-          
-          git remote add origin_with_token "https://x-access-token:${{ secrets.DEPLOY_KEY }}@github.com/sutz1/weather-widget.git"
-          git push origin_with_token gh-pages
+          git remote add origin_with_token "https://sutz1:${{ secrets.DEPLOY_KEY }}@github.com/sutz1/weather-widget.git"
+          git push origin_with_token main
