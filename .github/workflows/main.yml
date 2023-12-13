@@ -24,7 +24,9 @@ jobs:
 
     steps:
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.DEPLOY_KEY}}
-          publish_dir: ./dist
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+          
+          git remote add origin_with_token "https://x-access-token:${{ secrets.DEPLOY_KEY }}@github.com/sutz1/weather-widget.git"
+          git push origin_with_token gh-pages
