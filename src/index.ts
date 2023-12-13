@@ -39,9 +39,11 @@ const updateWeather = async () => {
       console.log("Feels like:", Math.floor(weather.main.feels_like), "°F");
       console.log("Condition:", weather.weather[0].description);
       console.log("Weather Icon:", icon);
+      const weatherLocation = document.getElementById("location") as HTMLHeadingElement
       const weatherIcon = document.getElementById("weather-icon") as HTMLImageElement;
       const temperature = document.getElementById("temperature") as HTMLParagraphElement;
       const condition = document.getElementById("condition") as HTMLParagraphElement;
+      weatherLocation.textContent = `Weather in ${weather.name}`;
       weatherIcon.src = icon;
       temperature.textContent = `Temperature: ${Math.floor(weather.main.temp)} °F`;
       condition.textContent = `Condition: ${weather.weather[0].description}`;

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c) ammap.com | SVG weather icons -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64" viewbox="0 0 64 64">
+    <defs>
+        <filter id="blur" width="200%" height="200%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="3"></feGaussianBlur>
+            <feOffset dx="0" dy="4" result="offsetblur"></feOffset>
+            <feComponentTransfer>
+                <feFuncA type="linear" slope="0.05"></feFuncA>
+            </feComponentTransfer>
+            <feMerge> 
+                <feMergeNode></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode> 
+            </feMerge>
+        </filter>
+        <style>@keyframes am-weather-cloud-1 {
+  0% {
+    transform: translate(-5px);
+  }
+
+  50% {
+    transform: translate(10px);
+  }
+
+  100% {
+    transform: translate(-5px);
+  }
+}
+
+.am-weather-cloud-1 {
+  animation-name: am-weather-cloud-1;
+  animation-duration: 7s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes am-weather-cloud-2 {
+  0% {
+    transform: translate(0);
+  }
+
+  50% {
+    transform: translate(2px);
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}
+
+.am-weather-cloud-2 {
+  animation-name: am-weather-cloud-2;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes am-weather-stroke {
+  0% {
+    transform: translate(0);
+  }
+
+  2% {
+    transform: translate(.3px);
+  }
+
+  4% {
+    transform: translate(0);
+  }
+
+  6% {
+    transform: translate(.5px, .4px);
+  }
+
+  8% {
+    transform: translate(0);
+  }
+
+  10% {
+    transform: translate(.3px);
+  }
+
+  12% {
+    transform: translate(0);
+  }
+
+  14% {
+    transform: translate(.3px);
+  }
+
+  16% {
+    transform: translate(0);
+  }
+
+  18% {
+    transform: translate(.3px);
+  }
+
+  20% {
+    transform: translate(0);
+  }
+
+  22% {
+    transform: translate(1px);
+  }
+
+  24% {
+    transform: translate(0);
+  }
+
+  26% {
+    transform: translate(-1px);
+  }
+
+  28% {
+    transform: translate(0);
+  }
+
+  40% {
+    fill: orange;
+    transform: translate(0);
+  }
+
+  65% {
+    fill: #fff;
+    transform: translate(-1px, 5px);
+  }
+
+  61% {
+    fill: orange;
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}
+
+.am-weather-stroke {
+  animation-name: am-weather-stroke;
+  animation-duration: 1.11s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+</style>
+    </defs>
+    <g filter="url('#blur')" id="thunder">
+        <g transform="translate(20,10)">
+            <g class="am-weather-cloud-1">
+                <path d="M47.7,35.4     c0-4.6-3.7-8.2-8.2-8.2c-1,0-1.9,0.2-2.8,0.5c-0.3-3.4-3.1-6.2-6.6-6.2c-3.7,0-6.7,3-6.7,6.7c0,0.8,0.2,1.6,0.4,2.3     c-0.3-0.1-0.7-0.1-1-0.1c-3.7,0-6.7,3-6.7,6.7c0,3.6,2.9,6.6,6.5,6.7l17.2,0C44.2,43.3,47.7,39.8,47.7,35.4z" fill="#91C0F8" stroke="white" stroke-linejoin="round" stroke-width="1.2" transform="translate(-10,-6), scale(0.6)"></path>
+            </g>
+            <g>
+                <path d="M47.7,35.4     c0-4.6-3.7-8.2-8.2-8.2c-1,0-1.9,0.2-2.8,0.5c-0.3-3.4-3.1-6.2-6.6-6.2c-3.7,0-6.7,3-6.7,6.7c0,0.8,0.2,1.6,0.4,2.3     c-0.3-0.1-0.7-0.1-1-0.1c-3.7,0-6.7,3-6.7,6.7c0,3.6,2.9,6.6,6.5,6.7l17.2,0C44.2,43.3,47.7,39.8,47.7,35.4z" fill="#57A0EE" stroke="white" stroke-linejoin="round" stroke-width="1.2" transform="translate(-20,-11)"></path>
+            </g>
+            <g transform="translate(-9,28), scale(1.2)">
+                <polygon class="am-weather-stroke" fill="orange" stroke="white" stroke-width="1" points="14.3,-2.9 20.5,-2.9 16.4,4.3 20.3,4.3 11.5,14.6 14.9,6.9 11.1,6.9"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

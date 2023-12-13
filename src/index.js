@@ -67,7 +67,7 @@ var fetchData = function () { return __awaiter(void 0, void 0, void 0, function 
     });
 }); };
 var updateWeather = function () { return __awaiter(void 0, void 0, void 0, function () {
-    var weather, icon, weatherIcon, temperature, condition, unknownIcon;
+    var weather, icon, weatherLocation, weatherIcon, temperature, condition, unknownIcon;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0: return [4 /*yield*/, fetchData()];
@@ -82,9 +82,11 @@ var updateWeather = function () { return __awaiter(void 0, void 0, void 0, funct
                         console.log("Feels like:", Math.floor(weather.main.feels_like), "°F");
                         console.log("Condition:", weather.weather[0].description);
                         console.log("Weather Icon:", icon);
+                        weatherLocation = document.getElementById("location");
                         weatherIcon = document.getElementById("weather-icon");
                         temperature = document.getElementById("temperature");
                         condition = document.getElementById("condition");
+                        weatherLocation.textContent = "Weather in ".concat(weather.name);
                         weatherIcon.src = icon;
                         temperature.textContent = "Temperature: ".concat(Math.floor(weather.main.temp), " \u00B0F");
                         condition.textContent = "Condition: ".concat(weather.weather[0].description);
