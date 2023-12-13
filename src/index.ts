@@ -1,8 +1,9 @@
 import { WeatherData } from "./models/weather-data";
 import { API_KEY, UNITS } from "./credentials";
 import axios from "axios";
-import { WEATHER_ICONS } from "./models/weather-icons";
+import { buildWeatherMap } from "./models/weather-icons";
  // Assuming you have a similar structure for weather icons
+ const WEATHER_ICONS = buildWeatherMap();
 
 const fetchData = async (): Promise<WeatherData | null> => {
   try {
@@ -38,6 +39,12 @@ const updateWeather = async () => {
       console.log("Feels like:", Math.floor(weather.main.feels_like), "°F");
       console.log("Condition:", weather.weather[0].description);
       console.log("Weather Icon:", icon);
+      const weatherIcon = document.getElementById("weather-icon") as HTMLImageElement;
+      const temperature = document.getElementById("temperature") as HTMLParagraphElement;
+      const condition = document.getElementById("condition") as HTMLParagraphElement;
+      weatherIcon.src = icon;
+      temperature.textContent = `Temperature: ${Math.floor(weather.main.temp)} °F`;
+      condition.textContent = `Condition: ${weather.weather[0].description}`;
     } else {
       console.error(
         `Icon not found in library. Please update the map to match the new description: ${weather.weather[0].description}`

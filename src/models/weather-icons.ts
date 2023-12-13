@@ -1,13 +1,13 @@
-import CLOUDY from "../assets/weather-assets/Animated/cloudy.svg"
-import DAY from "../assets/weather-assets/Animated/day.svg";
-import PARTLY_CLOUDY from "../assets/weather-assets/Animated/cloudy-day-3.svg";
-import RAIN from "../assets/weather-assets/Animated/rainy-6.svg";
-import LIGHT_RAIN from "../assets/weather-assets/Animated/rainy-4.svg"
-import THUNDERSTORM from "../assets/weather-assets/Animated/thunder.svg";
-import SNOW from "../assets/weather-assets/Animated/snowy-6.svg";
-import UNKNOWN from "../assets/Other/Unknown.svg";
+const CLOUDY = require("../weather-assets/animated/cloudy.svg")
+const DAY = require("../weather-assets/animated/day.svg");
+const PARTLY_CLOUDY = require("../weather-assets/animated/cloudy-day-3.svg");
+const RAIN = require("../weather-assets/animated/rainy-6.svg");
+const LIGHT_RAIN = require("../weather-assets/animated/rainy-4.svg");
+const THUNDERSTORM = require("../weather-assets/animated/thunder.svg");
+const SNOW = require("../weather-assets/animated/snowy-6.svg");
+const UNKNOWN = require("../assets/weather-assets/Other/Black_question_mark.png");
 
-function buildWeatherMap() {
+export function buildWeatherMap() {
   const map = new Map();
   map.set("broken clouds", CLOUDY);
   map.set("clear sky", DAY);
@@ -23,9 +23,6 @@ function buildWeatherMap() {
   map.set("moderate rain", RAIN);
   map.set("Unknown", UNKNOWN);
   map.set("overcast clouds", CLOUDY);
-  map.set("few clouds", CLOUDY);
 
   return map;
 }
-
-export const WEATHER_ICONS = buildWeatherMap();

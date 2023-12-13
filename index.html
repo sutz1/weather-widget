@@ -1,14 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./src/assets/weather-assets/Animated/cloudy-day-3.svg" />
-    <link rel="stylesheet" href="./styles.css">
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="./src/assets/weather-assets/Animated/cloudy-day-3.svg"
+    />
+    <link rel="stylesheet" href="./styles.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Widget</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="weather-info">
+      <img id="weather-icon" alt="Weather Icon" />
+      <p id="temperature"></p>
+      <p id="condition"></p>
+    </div>
     <script type="module" src="/src/index.js"></script>
   </body>
 </html>

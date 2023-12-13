@@ -40,6 +40,7 @@ var credentials_1 = require("./credentials");
 var axios_1 = require("axios");
 var weather_icons_1 = require("./models/weather-icons");
 // Assuming you have a similar structure for weather icons
+var WEATHER_ICONS = (0, weather_icons_1.buildWeatherMap)();
 var fetchData = function () { return __awaiter(void 0, void 0, void 0, function () {
     var position, longitude, latitude, response, error_1;
     return __generator(this, function (_a) {
@@ -66,14 +67,14 @@ var fetchData = function () { return __awaiter(void 0, void 0, void 0, function 
     });
 }); };
 var updateWeather = function () { return __awaiter(void 0, void 0, void 0, function () {
-    var weather, icon, unknownIcon;
+    var weather, icon, weatherIcon, temperature, condition, unknownIcon;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0: return [4 /*yield*/, fetchData()];
             case 1:
                 weather = _a.sent();
                 if (weather) {
-                    icon = weather_icons_1.WEATHER_ICONS.get(weather.weather[0].description);
+                    icon = WEATHER_ICONS.get(weather.weather[0].description);
                     if (icon) {
                         // Update UI with weather data and icon
                         console.log("Weather in", weather.name);
@@ -81,10 +82,16 @@ var updateWeather = function () { return __awaiter(void 0, void 0, void 0, funct
                         console.log("Feels like:", Math.floor(weather.main.feels_like), "°F");
                         console.log("Condition:", weather.weather[0].description);
                         console.log("Weather Icon:", icon);
+                        weatherIcon = document.getElementById("weather-icon");
+                        temperature = document.getElementById("temperature");
+                        condition = document.getElementById("condition");
+                        weatherIcon.src = icon;
+                        temperature.textContent = "Temperature: ".concat(Math.floor(weather.main.temp), " \u00B0F");
+                        condition.textContent = "Condition: ".concat(weather.weather[0].description);
                     }
                     else {
                         console.error("Icon not found in library. Please update the map to match the new description: ".concat(weather.weather[0].description));
-                        unknownIcon = weather_icons_1.WEATHER_ICONS.get("Unknown");
+                        unknownIcon = WEATHER_ICONS.get("Unknown");
                         console.log("Weather Icon (Unknown):", unknownIcon);
                     }
                 }

@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "This project is meant to test my skills in web development. First I intend to make a simple weather webpage, with hopes to add additional widgets and extensions. The app is hosted on AWS Amplify.",
   "main": "index.js",
+  "source": "./index.html",
   "scripts": {
-    "build": "tsc"
+    "start": "parcel",
+    "build": "parcel build"
   },
   "keywords": [],
   "author": "",
