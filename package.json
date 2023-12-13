@@ -2,7 +2,6 @@
   "name": "weather-widget",
   "version": "1.0.0",
   "description": "This project is meant to test my skills in web development. First I intend to make a simple weather webpage, with hopes to add additional widgets and extensions. The app is hosted on AWS Amplify.",
-  "main": "index.js",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
@@ -12,12 +11,13 @@
   "homepage": "https://sutz1.github.io/weather-widget/",
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.2"
+  },
   "devDependencies": {
-    "axios": "^1.6.2",
     "buffer": "^6.0.3",
     "gh-pages": "^6.1.0",
     "parcel": "^2.10.3",
-    "parcel-bundler": "^1.12.5",
     "ts-loader": "^9.5.1",
     "typescript": "^5.3.3"
   }
