@@ -1,0 +1,19 @@
+{
+  "name": "weather-widget",
+  "version": "1.0.0",
+  "description": "This project is meant to test my skills in web development. First I intend to make a simple weather webpage, with hopes to add additional widgets and extensions. The app is hosted on AWS Amplify.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "^1.6.2",
+    "buffer": "^6.0.3",
+    "parcel": "^2.10.3",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3"
+  }
+}
