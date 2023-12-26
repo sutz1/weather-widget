@@ -3,22 +3,23 @@
   "version": "1.0.0",
   "description": "This project is meant to test my skills in web development. First I intend to make a simple weather webpage, with hopes to add additional widgets and extensions. The app is hosted on AWS Amplify.",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html",
-    "deploy": "gh-pages -d dist"
+    "build": "tsc && webpack",
+    "start": "tsc && webpack-dev-server --open --config webpack.config.js"
   },
-  "keywords": [],
   "homepage": "https://sutz1.github.io/weather-widget/",
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "axios": "^1.6.2"
   },
+  "private": true,
   "devDependencies": {
     "buffer": "^6.0.3",
+    "file-loader": "^6.2.0",
     "gh-pages": "^6.1.0",
-    "parcel": "^2.10.3",
     "ts-loader": "^9.5.1",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "undici-types": "^6.2.1",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   }
 }

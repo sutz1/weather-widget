@@ -1,19 +1,18 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "sourceMap": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "lib": [
-        "es2015",
-        "es5",
-        "es6",
-        "dom"
-    ],
-    "noUnusedLocals": true,
+    "target": "es6",
     "module": "commonjs",
-    "strict": false
-},
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.json", "src/**/*.svg", "src/*.d.ts", "src/**/*.png"],
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": false
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.json"],
   "exclude": ["node_modules"]
 }

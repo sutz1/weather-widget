@@ -6,6 +6,7 @@ import { buildWeatherMap } from "./models/weather-icons";
  const WEATHER_ICONS = buildWeatherMap();
 
 const fetchData = async (): Promise<WeatherData | null> => {
+  console.info(`starting data fetch`)
   try {
 
     const position = await new Promise<GeolocationPosition>((resolve, reject) => {
@@ -18,7 +19,8 @@ const fetchData = async (): Promise<WeatherData | null> => {
     const response = await axios.get<WeatherData>(
       `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=${UNITS}&radar=true&appid=${API_KEY}`
     );
-
+    
+    console.info('data fetched successfully');
     return response.data;
   } catch (error: any) {
     console.error("Error fetching weather data:", error);
@@ -27,6 +29,7 @@ const fetchData = async (): Promise<WeatherData | null> => {
 };
 
 const updateWeather = async () => {
+  console.info("Beginning to update weather");
   const weather = await fetchData();
 
   if (weather) {
