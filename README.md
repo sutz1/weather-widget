@@ -1,5 +1,5 @@
 # Basic Weather App (name TBD)
-This project is meant to test my skills in web development. First I intend to make a simple weather webpage, with hopes to add additional widgets and extensions. The app is hosted on Github Pages and can be accessed here: https://sutz1.github.io/weather-widget/
+This project is meant to test my skills in web development. First I intend to make a simple weather webpage, with hopes to add additional widgets and extensions. The app is hosted on Github Pages and can be accessed here: https://sutz1.github.io/weather-widget/lib/dist
 
 ## PreRequisites
 Before you are able to use this repository, you will need an API key from OpenWeather. This is free, but you will need to make an account: https://openweathermap.org/ . Once completed, you can then click on your username on the top-right of the webpage -> My API Keys, and your API key will be listed. You will need this key in the usage instructions below. Should you ever accidentally delete or expose this key to the public, you can delete and request a new key on the `My API Keys` page.
