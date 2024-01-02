@@ -1,25 +1,23 @@
 {
-  "name": "weather-widget",
+  "name": "weather-widget-rewrite",
   "version": "1.0.0",
-  "description": "This project is meant to test my skills in web development. First I intend to make a simple weather webpage, with hopes to add additional widgets and extensions. The app is hosted on AWS Amplify.",
-  "scripts": {
-    "build": "tsc && webpack",
-    "start": "tsc && webpack-dev-server --open --config webpack.config.js"
-  },
-  "homepage": "https://sutz1.github.io/weather-widget/",
-  "dependencies": {
-    "axios": "^1.6.2"
-  },
+  "description": "",
   "private": true,
+  "scripts": {
+    "build": "tsc && npx webpack",
+    "start": "build && "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.3"
+  },
   "devDependencies": {
-    "buffer": "^6.0.3",
-    "file-loader": "^6.2.0",
-    "gh-pages": "^6.1.0",
+    "@types/axios": "^0.14.0",
     "ts-loader": "^9.5.1",
     "typescript": "^5.3.3",
-    "undici-types": "^6.2.1",
     "webpack": "^5.89.0",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1"
+    "webpack-cli": "^5.1.4"
   }
 }

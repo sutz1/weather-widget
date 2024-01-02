@@ -1,34 +1,22 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = {
+  entry: './src/index.ts',
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
-        loader: 'file-loader',
-        options: {
-          outputPath: 'images',
-        },
-      },
-      {
+        test: /\.tsx?$/,
         use: 'ts-loader',
-        exclude: /node-modules/,
-      }
+        exclude: /node_modules/,
+      },
     ],
   },
-  entry: "./src/index.ts",
-  devtool: 'inline-source-map',
-  output: {
-    filename: "bundled.js",
-    path: path.resolve(__dirname, "dist"),
-  },
   resolve: {
-    extensions: ['.ts', '.js', '.svg', '.png'], // Add more extensions if needed
+    extensions: ['.tsx', '.ts', '.js'],
   },
-  devServer: {
-    static: {
-      directory: path.join(__dirname, './'),
-    },
-    port: 8080,
-    open: true,
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'lib/dist'),
   },
 };
