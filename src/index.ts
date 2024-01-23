@@ -1,5 +1,6 @@
 import axios from "axios";
 import { WeatherData } from "./models/weather-data";
+import { buildWeatherMap } from "./models/weather-icons";
 
 const fetchData = async (): Promise<WeatherData | null> => {
     console.info(`starting data fetch`)
@@ -25,6 +26,15 @@ const fetchData = async (): Promise<WeatherData | null> => {
     }
 };
 
+function getWeatherIcon(condition: string) {
+    let map = buildWeatherMap();
+    if (map.has(condition)) {
+        return map.get(condition);
+    } else {
+        return map.get("unknown")
+    }
+}
+
 const updateWeather = async () => {
     console.info("Beginning to update weather");
     const weather = await fetchData();
@@ -35,9 +45,12 @@ const updateWeather = async () => {
         console.log("Temperature:", Math.floor(weather.main.temp), "°F");
         console.log("Feels like:", Math.floor(weather.main.feels_like), "°F");
         console.log("Condition:", weather.weather[0]?.description);
+
         const weatherLocation = document.getElementById("location") as HTMLHeadingElement;
         const temperature = document.getElementById("temperature") as HTMLParagraphElement;
         const condition = document.getElementById("condition") as HTMLParagraphElement;
+        const weatherIcon = document.getElementById("weather-icon") as HTMLImageElement;
+        weatherIcon.src = getWeatherIcon(weather.weather[0]?.description)
         weatherLocation.textContent = `Weather in ${weather.name}`;
         temperature.textContent = `Temperature: ${Math.floor(weather.main.temp)} °F`;
         condition.textContent = `Condition: ${weather.weather[0]?.description}`;

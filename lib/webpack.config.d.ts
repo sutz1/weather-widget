@@ -14,3 +14,11 @@ export namespace output {
     let filename: string;
     let path: string;
 }
+export namespace devServer {
+    export namespace _static {
+        let directory: string;
+    }
+    export { _static as static };
+    export let compress: boolean;
+    export let port: number;
+}
