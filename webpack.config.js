@@ -33,7 +33,7 @@ module.exports = {
     static: {
       directory: path.join(__dirname, 'lib/dist'),
     },
-    compress: true,
+    compress: false,
     port: 9000,
   },
 };

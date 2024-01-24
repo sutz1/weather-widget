@@ -1,36 +1,53 @@
 * {
-    color: white;
-    font-family: sans-serif;
-    text-align: center;
-  } 
-  
-  html, body {
-    height: 100%;
-  }
-  
-  body {
-    background-image: linear-gradient(30deg, black, rgb(31, 30, 30));
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    padding-top: 25%;
-  }
-  #location {
-    font-size: 50px;
-  }
-  
-  #weather-icon {
-    width: 250px;
-    margin: 0 auto;
-  }
-  
-  #temperature {
-    font-size: 25px;
-  }
-  
-  #condition {
-    font-size: 20px;
-  }
-    
-    
-    
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+  box-sizing: border-box; /* Add box-sizing for more consistent sizing */
+}
+
+html, body {
+  background-image: linear-gradient(30deg, black, rgb(31, 30, 30));
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.widgetContainer {
+  display: grid;
+  background-color: transparent;
+  border: 5px solid;
+  border-radius: 15%;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  margin-left: 10vh;
+  margin-right: 10vh;
+  width: 75vh;
+  height: 75vh;
+  padding-top: 80%;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.shadowWrapper {
+  filter: drop-shadow(0 0 0.75rem crimson); /* Apply drop shadow to this wrapper */
+}
+
+#location {
+  font-size: 5vh;
+  margin-top: 5vh;
+}
+
+#weather-icon {
+  width: 30vh;
+  margin: auto;
+}
+
+#temperature {
+  font-size: 5vh;
+}
+
+#condition {
+  font-size: 2vh;
+}

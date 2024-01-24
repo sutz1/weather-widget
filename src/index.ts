@@ -26,6 +26,12 @@ const fetchData = async (): Promise<WeatherData | null> => {
     }
 };
 
+function capitalizeWords(inputString) {
+    return inputString.replace(/\b\w/g, function(match) {
+      return match.toUpperCase();
+    });
+  }
+
 function getWeatherIcon(condition: string) {
     let map = buildWeatherMap();
     if (map.has(condition)) {
@@ -50,10 +56,11 @@ const updateWeather = async () => {
         const temperature = document.getElementById("temperature") as HTMLParagraphElement;
         const condition = document.getElementById("condition") as HTMLParagraphElement;
         const weatherIcon = document.getElementById("weather-icon") as HTMLImageElement;
+        const conditionConverted = capitalizeWords(weather.weather[0]?.description);
         weatherIcon.src = getWeatherIcon(weather.weather[0]?.description)
         weatherLocation.textContent = `Weather in ${weather.name}`;
         temperature.textContent = `Temperature: ${Math.floor(weather.main.temp)} °F`;
-        condition.textContent = `Condition: ${weather.weather[0]?.description}`;
+        condition.textContent = `Condition: ${conditionConverted}`;
     } else {
         console.log(`Loading...`);
     }
