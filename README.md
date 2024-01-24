@@ -2,6 +2,7 @@
 This project is meant to test my skills in web development. First I intend to make a simple weather webpage, with hopes to add additional widgets and extensions. The app is hosted on Github Pages and can be accessed here: https://sutz1.github.io/weather-widget
 
 ## Upcoming Featuers and Ideas
+* Find out why javascript does not run when accessing via in-app browser (example: opening link in Slack or LinkedIn).
 * Add search bar to allow for queries based by city. This will be the default behavior if app is unable to get user's location
 * Better front-end design. As of now there is very basic CSS implemented into the widget. I intend to make this much more sophisticated and modern over time
 * Unit tests
